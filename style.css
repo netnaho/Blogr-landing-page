@@ -7,22 +7,25 @@ body {
   font-family: "Overpass", sans-serif;
 }
 .container {
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
 }
+/* header styles */
 header {
-  background: url(images/bg-pattern-intro-desktop.svg) no-repeat center center/
+  background: url(images/bg-pattern-intro-mobile.svg) no-repeat center center/
     cover;
-  background-color: rgb(243, 106, 82);
-  color: white;
-  border-bottom-left-radius: 80px;
-  text-align: center;
-  padding: 20px 0;
+  background-color: rgb(255, 97, 58);
+  background-size: 200%;
   display: flex;
   flex-direction: column;
-  gap: 4.5rem;
+  justify-content: center;
+  gap: 60px;
+  padding: 25px 0;
+  padding-bottom: 110px;
+  border-bottom-left-radius: 70px;
+  position: relative;
 }
-ul {
+header ul {
   list-style-type: none;
 }
 nav {
@@ -30,123 +33,169 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-nav ul {
-  display: flex;
+.ham-menu {
+  width: 35px;
+  height: 35px;
+  position: relative;
 }
-nav i {
-  font-size: 0.8rem;
+.ham-menu .bar {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s, width 0.3s;
 }
+.ham-menu .bar-1 {
+  transform: translate(-50%, -15px);
+}
+.ham-menu .bar-3 {
+  transform: translate(-50%, 13px);
+}
+/* js styling for hamMenu */
+.ham-menu.active .bar-1 {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active .bar-2 {
+  transform: translate(-50%, -50%);
+  width: 0;
+}
+.ham-menu.active .bar-3 {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+/* hamMenu js styling ends here */
 .hero {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 5.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  color: #fff;
 }
 .hero h1 {
-  font-size: 3.4rem;
+  font-size: 2.3rem;
 }
-.logo {
-  flex: 2;
-  margin-right: 1.3rem;
+.hero p {
+  font-size: 1.2rem;
 }
-.links {
-  flex: 7;
-  gap: 90px;
-  font-size: 1.1rem;
-}
-.product {
-  position: relative;
-}
-.company {
-  position: relative;
-}
-.connect {
-  position: relative;
-}
-.signups {
-  flex: 3;
-  gap: 10px;
-}
-.ham-menu {
-  display: none;
-  /* visibility: hidden; */
+.btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.4s;
+  cursor: pointer;
+  outline: 0;
 }
 .btn-white {
-  background-color: white;
-  color: rgb(243, 106, 82);
-  padding: 10px 15px;
-  border: 1px solid rgb(243, 106, 82);
-  border-radius: 20px;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.4s;
+  background-color: #fff;
+  color: rgb(255, 97, 58);
+  border: 1px solid white;
 }
 .btn-white:hover {
-  background-color: rgba(252, 121, 156, 0.911);
+  background-color: rgb(255, 97, 58);
   color: #fff;
+  border: 1px solid white;
 }
-.btn-orange {
-  background-color: rgb(243, 106, 82);
+.btn-pink {
+  background-color: rgb(255, 97, 58);
   color: #fff;
-  padding: 10px 15px;
-  border: 1px solid #fff;
-  border-radius: 20px;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.4s;
+  border: 1px solid white;
 }
-.btn-orange:hover {
-  background-color: #fff;
-  color: rgb(243, 106, 82);
-  border: 1px solid rgb(243, 106, 82);
+.btn-pink:hover {
+  background-color: rgba(255, 174, 220, 0.721);
+  border: 1px solid rgba(255, 174, 220, 0.721);
 }
-/* tooltips js */
-nav li ul {
-  padding: 10px;
-  background-color: #fff;
-  color: #000;
+.mob-nav {
+  max-width: 400px;
+  min-width: 370px;
+  margin: 0 auto;
+  background-color: rgb(234, 244, 255);
+  padding: 20px 0;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  border-radius: 5px;
-  box-shadow: 0 0 5px;
-  margin-top: 5px;
   position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* display: none; */
+  animation-name: mobnav;
+  animation-duration: 1s;
+  animation-timing-function: linear;
 }
-nav li ul li {
-  cursor: pointer;
+@keyframes mobnav {
+  from {
+    right: -50%;
+  }
+  to {
+    right: 25%;
+  }
 }
-.hidden {
-    display: none;
+.links > ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(180, 177, 177);
+  padding: 10px 0px;
 }
-@media screen and (max-width: 840px) {
-  .links {
-    display: none;
-  }
-  .signups {
-    display: none;
-  }
-  .ham-menu {
-    display: block;
-    font-size: 50px;
-  }
-  .logo {
-    flex: 1;
-  }
-  .ham-menu {
-    flex: 1;
-  }
-  .container {
-    width: 100%;
-  }
-
-  .hero h1 {
-    font-size: 2.3rem;
-  }
+.links .prod:hover {
+  text-decoration: underline;
+  transition: 0.4s;
+}
+.links > ul ul {
+  background-color: rgb(230, 221, 221);
+  border-radius: 8px;
+  margin-top: 5px;
+  font-weight: normal;
+  height: 0px;
+  /* width: 250px; */
+  overflow: hidden;
+  /* padding-top: 10px; */
+  transition: 0.3s;
+}
+.links > ul ul > li {
+  margin-bottom: 10px;
+}
+.signups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.signups .btn {
+  width: 120px;
+}
+.signups .btn-white {
+  box-shadow: 0 0 2px black;
+  background: linear-gradient(to right bottom, rgb(255, 191, 0), red);
+  color: #fff;
+  border: 0;
+}
+.signups .btn-white:hover {
+  background: linear-gradient(to right bottom, red, rgb(255, 191, 0));
+}
+.signups .btn-pink {
+  background-color: transparent;
+  color: black;
+}
+/* js styling */
+.links .active ~ ul {
+  height: fit-content;
+  width: 250px;
+  padding-top: 10px;
+  transition: 0.5s;
+}
+.mob-nav.hidden {
+  display: none;
 }

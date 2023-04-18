@@ -20,74 +20,70 @@
   <body>
     <header>
       <nav class="container">
-        <div class="logo">
-          <img src="images/logo.svg" alt="" />
-        </div>
-        <ul class="nav-links links">
-          <li class="product">
-            Product
-            <i class="fa-solid fa-chevron-down" style="color: #f7f7f8"></i>
-            <ul class="hidden prod-list">
-              <li>Books</li>
-              <li>Magazines</li>
-              <li>Newspapers</li>
-            </ul>
-          </li>
-          <li class="nav-links company">
-            Company
-            <i class="fa-solid fa-chevron-down" style="color: #f7f7f8"></i>
-            <ul class="hidden comp-list">
-              <li>Harper</li>
-              <li>Macmillan</li>
-              <li>Hachette</li>
-            </ul>
-          </li>
-          <li class="nav-links connect">
-            Connect
-            <i class="fa-solid fa-chevron-down" style="color: #f7f7f8"></i>
-            <ul class="hidden conn-list">
-              <li>Contact</li>
-              <li>Newsletter</li>
-              <li>LinkedIn</li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="signups">
-          <button class="btn-orange">login</button>
-          <button class="btn-white">sign up</button>
-        </ul>
+        <div class="logo"><img src="images/logo.svg" alt="" /></div>
         <div class="ham-menu">
-          <img src="images/icon-hamburger.svg" alt="" />
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
         </div>
       </nav>
       <div class="container hero">
         <h1>A modern publishing platform</h1>
-        <p>Grow your audience and build your online brand</p>
-        <div class="cta-btns">
-          <button class="btn-white">Start for Free</button>
-          <button class="btn-orange">Learn More</button>
+        <p>Grow your audienceand build your online brand</p>
+        <div class="hero-btns">
+          <button class="btn btn-white">Start for Free</button>
+          <button class="btn btn-pink">Learn More</button>
         </div>
       </div>
-      <!-- <div class="mobile-menu">
-        <ul>
-          <li>product</li>
-          <li>company</li>
+      <div class="mob-nav hidden">
+        <div class="links">
           <ul>
-            <li>Contact</li>
-            <li>Newsletter</li>
-            <li>LinkedIn</li>
+            <li>
+              <span id="prod" class="prod">Product</span>
+              <i
+                class="fa-solid fa-chevron-down fa-xs"
+                style="color: #ff6200"
+              ></i>
+              <ul class="prod-list">
+                <li>Books</li>
+                <li>Newspaper</li>
+                <li>Magazines</li>
+              </ul>
+            </li>
+            <li>
+              <span class="prod">Company</span>
+              <i
+                class="fa-solid fa-chevron-down fa-xs"
+                style="color: #ff6200"
+              ></i>
+              <ul class="comp-list">
+                <li>HarperCollins</li>
+                <li>Macmillan</li>
+                <li>Wiley</li>
+              </ul>
+            </li>
+            <li>
+              <span class="prod">Connect</span>
+              <i
+                class="fa-solid fa-chevron-down fa-xs"
+                style="color: #ff6200"
+              ></i>
+              <ul class="conn-list">
+                <li>Contact</li>
+                <li>Newsletter</li>
+                <li>LinkedIn</li>
+              </ul>
+            </li>
           </ul>
-          <li>
-            Connect
-            <ul>
-              <li>Contact</li>
-              <li>Newsletter</li>
-              <li>LinkedIn</li>
-            </ul>
-          </li>
-        </ul>
-      </div> -->
+        </div>
+        <div class="signups">
+          <button class="btn btn-pink">Login</button>
+          <button class="btn btn-white">signup</button>
+        </div>
+      </div>
     </header>
+    <main></main>
+    <footer></footer>
   </body>
   <script src="main.js"></script>
 </html>

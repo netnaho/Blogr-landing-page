@@ -111,8 +111,7 @@ nav {
   border: 1px solid rgba(255, 174, 220, 0.721);
 }
 .mob-nav {
-  max-width: 400px;
-  min-width: 370px;
+  width: 70%;
   margin: 0 auto;
   background-color: rgb(234, 244, 255);
   padding: 20px 0;
@@ -128,7 +127,7 @@ nav {
   transform: translateX(-50%);
   /* display: none; */
   animation-name: mobnav;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: linear;
 }
 @keyframes mobnav {
@@ -139,7 +138,7 @@ nav {
     right: 25%;
   }
 }
-.links > ul {
+.mob-nav .links > ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -150,11 +149,11 @@ nav {
   border-bottom: 1px solid rgb(180, 177, 177);
   padding: 10px 0px;
 }
-.links .prod:hover {
+.mob-nav .links .prod:hover {
   text-decoration: underline;
   transition: 0.4s;
 }
-.links > ul ul {
+.mob-nav .links > ul ul {
   background-color: rgb(230, 221, 221);
   border-radius: 8px;
   margin-top: 5px;
@@ -165,32 +164,32 @@ nav {
   /* padding-top: 10px; */
   transition: 0.3s;
 }
-.links > ul ul > li {
+.mob-nav .links > ul ul > li {
   margin-bottom: 10px;
 }
-.signups {
+.mob-nav .signups {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.signups .btn {
+.mob-nav .signups .btn {
   width: 120px;
 }
-.signups .btn-white {
+.mob-nav .signups .btn-white {
   box-shadow: 0 0 2px black;
   background: linear-gradient(to right bottom, rgb(255, 191, 0), red);
   color: #fff;
   border: 0;
 }
-.signups .btn-white:hover {
+.mob-nav .signups .btn-white:hover {
   background: linear-gradient(to right bottom, red, rgb(255, 191, 0));
 }
-.signups .btn-pink {
+.mob-nav .signups .btn-pink {
   background-color: transparent;
   color: black;
 }
 /* js styling */
-.links .active ~ ul {
+.mob-nav .links .active ~ ul {
   height: fit-content;
   width: 250px;
   padding-top: 10px;
@@ -198,4 +197,51 @@ nav {
 }
 .mob-nav.hidden {
   display: none;
+}
+nav .links,
+nav .signups {
+  display: none;
+}
+@media screen and (min-width: 700px) {
+  .ham-menu,
+  .mob-nav {
+    display: none;
+  }
+  nav .links,
+  nav .signups {
+    display: block;
+  }
+  nav .links > ul {
+    display: flex;
+    color: #fff;
+    gap: 50px;
+  }
+  nav .logo {
+    flex: 1;
+    margin-right: 10px;
+  }
+  nav .links {
+    flex: 4;
+  }
+  nav .links ul li {
+    position: relative;
+  }
+  nav .links ul li ul {
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    padding: 5px;
+    border-radius: 4px;
+    display: none;
+    transition: 0.6s;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero p {
+    font-size: 1.5rem;
+  }
+  nav .links .active ~ ul {
+    display: block;
+  }
 }
